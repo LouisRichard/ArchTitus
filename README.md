@@ -7,9 +7,9 @@ This README contains the steps I do to install and configure a fully-functional 
 
 ---
 If the keyring is broken (again)
-Follow [This link](https://unix.stackexchange.com/questions/318385/no-such-file-or-directory-when-generating-a-gpg-key/340105#340105/)
-But the solution is actually : 
-```bash
+Follow [This link](https://unix.stackexchange.com/questions/318385/no-such-file-or-directory-when-generating-a-gpg-key/340105#340105/)  
+But the solution is actually :  
+```bash  
 mkdir -p /etc/pacman.d/gnupg/private-keys-v1.d
 chmod 700 /etc/pacman.d/gnupg/private-keys-v1.d
 
@@ -17,9 +17,11 @@ pacman-key --init
 pacman-key --populate archlinux
 
 pacman -Sy archlinux-keyring
-```
+```  
+
 And on that note, fuck them and their broken ISOs 
 (I know it wasn't me I checked the checksum and file integrity)
+
 ---
 ## Create Arch ISO or Use Image
 
