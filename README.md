@@ -6,6 +6,21 @@
 This README contains the steps I do to install and configure a fully-functional Arch Linux installation containing a desktop environment, all the support packages (network, bluetooth, audio, printers, etc.), along with all my preferred applications and utilities. The shell scripts in this repo allow the entire process to be automated.)
 
 ---
+If the keyring is broken (again)
+Follow [This link](https://unix.stackexchange.com/questions/318385/no-such-file-or-directory-when-generating-a-gpg-key/340105#340105/)
+But the solution is actually : 
+```bash
+mkdir -p /etc/pacman.d/gnupg/private-keys-v1.d
+chmod 700 /etc/pacman.d/gnupg/private-keys-v1.d
+
+pacman-key --init
+pacman-key --populate archlinux
+
+pacman -Sy archlinux-keyring
+```
+And on that note, fuck them and their broken ISOs 
+(I know it wasn't me I checked the checksum and file integrity)
+---
 ## Create Arch ISO or Use Image
 
 Download ArchISO from <https://archlinux.org/download/> and put on a USB drive with [Etcher](https://www.balena.io/etcher/), [Ventoy](https://www.ventoy.net/en/index.html), or [Rufus](https://rufus.ie/en/)
